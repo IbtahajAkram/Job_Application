@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Signup Form</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f6f5f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .container {
+            position: relative;
+            width: 900px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+            border-radius: 21px;
+            overflow: hidden;
+            padding: 50px 50px;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 50px;
+        }
+
+        form {
+            width: 100%;
+        }
+
+        form h1 {
+            margin-bottom: 30px;
+        }
+
+        form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        form input:focus {
+            border-bottom: 1px solid #007bff;
+        }
+
+        form button {
+            width: 100%;
+            padding: 10px;
+            margin: 20px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+        }
+
+        .overlay-container {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            transition: transform 0.6s ease;
+            z-index: 100;
+        }
+
+        .overlay {
+            position: relative;
+            width: 200%;
+            height: 100%;
+            transition: transform 0.6s ease;
+            transform: translateX(-50%);
+        }
+
+        .overlay-panel {
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            padding: 0 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #007bff;
+            color: #fff;
+            transform: translateX(0);
+            transition: transform 0.6s ease;
+        }
+
+        .overlay-left {
+            transform: translateX(-20%);
+        }
+
+        .overlay-right {
+            right: 0;
+            transform: translateX(0);
+        }
+
+        .overlay-panel h1 {
+            margin-bottom: 20px;
+        }
+
+        .overlay-panel p {
+            margin-bottom: 40px;
+        }
+
+        .overlay-panel button {
+            width: 200px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: transparent;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .overlay-panel button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .overlay-right {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .overlay-right button {
+            border: 2px solid #fff;
+        }
+
+        .overlay-left {
+            background-color: #fff;
+            color: #007bff;
+        }
+
+        .overlay-left button {
+            border: 2px solid #007bff;
+        }
+
+        .container.right-panel-active .overlay {
+            transform: translateX(-100%);
+        }
+
+        .container.right-panel-active .overlay-container {
+            transform: translateX(100%);
+        }
+
+        .container.right-panel-active .overlay-right {
+            transform: translateX(0);
+        }
+
+        .container.right-panel-active .overlay-left {
+            transform: translateX(-40%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-container sign-up-container">
+            <form id="Signup">
+                <h1>Create Account</h1>
+                <input type="text" id="name" placeholder="Name" required />
+                <input type="email" id="email" placeholder="Email" required />
+                <input type="password" id="password" placeholder="Password" required />
+                <button type="button" id="btnSignup" onclick="Signup()">Sign Up</button>
+                <!-- Added type="button" and onclick event -->
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form id="Login">
+                <h1>Sign In</h1>
+                <input type="email" id="loginEmail" placeholder="Email" required />
+                <input type="password" id="loginPassword" placeholder="Password" />
+                <button type="button" id="btnLogin" onclick="Login()">Sign In</button>
+                <!-- Added type="button" and onclick event -->
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details and start journey with us</p>
+                    <button class="ghost" id="signUp">Sign in</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('signUp').addEventListener('click', function () {
+            document.querySelector('.container').classList.add('right-panel-active');
+        });
+
+        document.getElementById('signIn').addEventListener('click', function () {
+            document.querySelector('.container').classList.remove('right-panel-active');
+        });
+
+        async function Signup() {
+            const form = document.getElementById('Signup');
+            const email = document.getElementById('email').value;
+            const btnSignup = document.getElementById('btnSignup');
+            const FormInputs = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value,
+            };
+            btnSignup.style.cursor = "Not-allowed";
+            btnSignup.innerText = 'Please wait...';
+            try {
+                const response = await fetch('/Signuppp', {
+                    method: 'POST',
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(FormInputs),
+                });
+                if (response.ok) {
+                    const result = await response.json();
+                    alert('Successfully Signup');
+                    btnSignup.style.cursor = "pointer";
+                    btnSignup.innerText = 'Sign up';
+                    form.reset();
+                    window.location.href = '/OTP';
+                } else {
+                    alert('Something Went Wrong Try Again');
+                    btnSignup.style.cursor = "pointer";
+                    btnSignup.innerText = 'Sign up';
+                    form.reset();
+                }
+            } catch (error) {
+                console.log('error');
+                alert('Successfully Signup');
+                form.reset();
+                btnSignup.style.cursor = "pointer";
+                btnSignup.innerText = 'Sign up';
+            }
+        }
+        async function Login() {
+            const loginEmail = document.getElementById('loginEmail').value;
+            const Login = document.getElementById('Login');
+            const btnLogin = document.getElementById('btnLogin');
+            btnLogin.style.cursor = "not-allowed";
+            btnLogin.innerText = 'Loading...';
+            const loginInputs = document.getElementById('loginEmail').value;
+            try {
+                const loginFetch = await fetch('/Login', {
+                    method: 'POST',
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(loginInputs),
+                });
+                if (loginFetch) {
+                    alert('Successfully Login');
+                    Login.reset();
+                    btnLogin.style.cursor = "pointer";
+                    btnLogin.innerText = 'Login';
+                    window.location.href = '/index.html';
+                } else {
+                    alert('Invalid Email Or Password Try Again');
+                    btnLogin.style.cursor = "pointer";
+                    btnLogin.innerText = 'Login';
+                    Login.reset();
+                }
+            } catch (error) {
+                console.log('error');
+                btnLogin.style.cursor = "pointer";
+                btnLogin.innerText = 'Login';
+                Login.reset();
+
+            }
+
+
+        }
+    </script>
+
+</body>
+
+</html>

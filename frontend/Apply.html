@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for a Job</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+        }
+
+        .container {
+            max-width: 670px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 23px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: 135vh;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="file"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+
+        /* Additional CSS for Footer */
+        footer {
+            background-color: navy;
+            border-top-left-radius: 92px;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h2 {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .footer-section p {
+            color: #ccc;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+            margin-left: -25px;
+
+        }
+
+        .footer-section ul li a:hover {
+            color: #fff;
+        }
+
+        .contact-input,
+        .btn-primary {
+            width: 20%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .contact-input {
+            margin-bottom: 15px;
+            background-color: #eee;
+        }
+
+        .btn-primary {
+            background-color: #ff6600;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-links a {
+            color: #fff;
+            font-size: 30px;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #ff6600;
+
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 15px 0;
+            background-color: rgb(251, 231, 5);
+            color: #000000;
+            font-size: 16px;
+
+        }
+
+        button[type="submit"] {
+            background: #28ca2d;
+            color: rgb(2, 2, 2);
+            border: none;
+            padding: 11px 24px;
+            cursor: pointer;
+            border-radius: 9px;
+            font-size: 16px;
+        }
+
+        button[type="submit"]:hover {
+            background: #02c90c;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        select {
+            width: calc(100% - 20px);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            display: flex;
+            align-items: end;
+            list-style: none;
+            gap: 30px;
+            margin-left: 312px;
+            padding: 33px;
+            text-decoration: none;
+        }
+
+        nav {
+            background-color: navy;
+            color: white;
+            margin-top: -16px;
+            text-decoration: none;
+
+        }
+
+        li {
+            cursor: pointer;
+        }
+
+
+        a {
+            text-decoration: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        .social-links {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <iframe src="./navbar.html"  width="100%" height="75px" ></iframe> -->
+    <nav>
+        <ul>
+            <li style="margin-left: -322px; font-size: 24px;  margin-bottom: -3px;">Jobs Hunter</li>
+            <a style="margin-left: 121px; " href="/Home">
+                <li>Home</li>
+            </a>
+            <a href="/Home">
+                <li>About</li>
+            </a>
+            <a href="/Home">
+                <li>Contact us</li>
+            </a>
+            <a href="/LatestJobs">
+                <li>Latest Jobs</li>
+            </a>
+           <a href="/PostaJob"><li>Post a Job</li></a> 
+            <a style="   text-decoration: none; color: white;" href="/Home">
+                <li>Catagories</li>
+            </a>
+            <li>Search Jobs</li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Apply For a Job</h1>
+        <form id="applynow" method="post">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="resume">Upload Resume:</label>
+            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+
+            <label for="qualifications">Qualifications:</label>
+            <textarea id="qualifications" name="qualifications" rows="4" required></textarea>
+
+            <label for="skills">Skills:</label>
+            <textarea id="skills" name="skills" rows="4" required></textarea>
+
+            <label for="coverLetter">Cover Letter:</label>
+            <textarea id="coverLetter" name="coverLetter" rows="6" required></textarea>
+            <br>
+            <button type="submit" id="applybtn" onclick="ApplyNow(event)">Apply Now</button>
+        </form>
+    </div>
+    <br><br><br><br>
+    <footer>
+        <div class="footer-content">
+            <br><br>
+            <div style="margin-left: 455px; " class="footer-section newsletter">
+                <h1 style="color: white; margin-left: -395px;">Subscribe to Newsletter</h1>
+                <p style="margin-left: -195px; font-size: 19px;">Subscribe to our newsletter to receive updates on new
+                    job listings, industry trends, and more.</p>
+                <form style="background-color: navy;  width: 380px; margin-left: -28px;" action="#">
+                    <input style="width: 366px; padding: 13px;" type="email" name="email"
+                        class="text-input contact-input" placeholder="Your email address">
+                    <button
+                        style="width: 104px; margin-top: -59px; padding: 14px 15px; margin-left: 372px; display: block;"
+                        type="submit" class="">Subscribe</button>
+                </form>
+            </div>
+
+            <div class="footer-section socials">
+                <h1 style="margin-left: 28px; color: white;">Follow Us</h1>
+                <div style="color: white;" class="social-links">
+                    <a href="https://www.linkedin.com/in/muhammad-zawwar-akram-572b36266/" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a> <!-- GitHub Icon -->
+                    <a href="https://www.freelancer.com/u/zain556" target="_blank"><i class="fas fa-user-circle"
+                            title="Freelacer.com"></i></a>
+                </div>
+            </div>
+            <br>
+            <div class="footer-section additional-services">
+                <h1 style="margin-left: -876px; color: white;">Additional Services</h1>
+
+                <ul>
+                    <div style="margin-left: -242px;">
+                        <li><a href="#">Resume Writing</a></li>
+                        <li><a href="#">Career Counseling</a></li>
+                        <li><a href="#">Interview Preparation</a></li>
+                        <li><a href="#">Skill Development Courses</a></li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-section links">
+            <h1 style="margin-left: 268px; margin-top: -217px; color: white;">Quick Links</h1>
+            <ul>
+                <div style="margin-left: 273px;">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </div>
+                <div style="margin-left: 143px;">
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Terms and Conditions</a></li>
+
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Blog</a></li>
+                </div>
+                <div style="margin-left: 83px;">
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Find Jobs</a></li>
+                    <li><a href="#">Post Jobs</a></li>
+                </div>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 JobSeeker | Designed by Muhammad Zawwar Akram
+        </div>
+    </footer>
+    <script>
+        async function ApplyNow(event) {
+            event.preventDefault();
+            const form = document.getElementById('applynow');
+            const applybtn = document.getElementById('applybtn');
+            // applybtn.style.disabled = "true";
+            applybtn.style.cursor = "not-allowed";
+            applybtn.innerText = 'Please Wait......';
+            const FormInputs = {
+                fullName: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                resume: document.getElementById('resume').value,
+                qualifications: document.getElementById('qualifications').value,
+                skills: document.getElementById('skills').value,
+                coverLetter: document.getElementById('coverLetter').value,
+            };
+            try {
+                const response = await fetch('/Apply', {
+                    method: 'POST',
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(FormInputs),
+                });
+                if (response.ok) {
+                    const result = await response.json();
+                    alert("Your Job Application Successfully  Submitted!");
+                    applybtn.style.cursor = "pointer";
+                    applybtn.innerText = 'Apply Now';
+                    form.reset();
+                    window.location.reload();
+
+                } else {
+                    alert("Your Job Application Not be Successfully  Submitted!");
+                    applybtn.style.cursor = "pointer";
+                    applybtn.innerText = 'Apply Now';
+                    form.reset();
+                    window.location.reload();
+                }
+            } catch (error) {
+                console.log('error');
+                applybtn.style.cursor = "pointer";
+                applybtn.innerText = 'Apply Now';
+                form.reset();
+                window.location.reload();
+            }
+        }
+    </script>
+</body>
+
+</html>

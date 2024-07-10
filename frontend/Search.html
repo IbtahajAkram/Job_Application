@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Search Filter</title>
+<style>
+    /* Basic styling */
+    #searchInput {
+        padding: 10px;
+        margin-bottom: 10px;
+        width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    #listContainer {
+        max-height: 300px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    #listContainer ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    #listContainer li {
+        padding: 10px;
+        cursor: pointer;
+    }
+    #listContainer li:hover {
+        background-color: #f0f0f0;
+    }
+</style>
+</head>
+<body>
+
+<h2>Live Search Filter</h2>
+
+<!-- Search input field -->
+<input type="text" id="searchInput" placeholder="Search...">
+<div id="listContainer">
+    <ul id="list">
+        <!-- List items to filter -->
+        <li>Apple</li>
+        <li>Orange</li>
+        <li>Banana</li>
+        <li>Mango</li>
+        <li>Pineapple</li>
+    </ul>
+</div>
+
+<script>
+    // Get the input field and list
+    const searchInput = document.getElementById('searchInput');
+    const list = document.getElementById('list');
+
+    // Add event listener for input field
+    searchInput.addEventListener('input', function() {
+        const searchValue = this.value.toLowerCase(); // Convert input to lowercase
+
+        // Loop through list items and show/hide based on search value
+        Array.from(list.getElementsByTagName('li')).forEach(function(item) {
+            const text = item.textContent.toLowerCase(); // Get item text content
+            if (text.includes(searchValue)) {
+                item.style.display = 'block'; // Show item if search value is found
+            } else {
+                item.style.display = 'none'; // Hide item if search value is not found
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

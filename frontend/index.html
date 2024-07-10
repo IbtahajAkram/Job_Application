@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        ul{
+            display: flex;
+            align-items: end;
+            list-style: none;
+            gap: 30px;
+            margin-left: 312px;
+            padding: 33px;
+        }
+
+        nav{
+            background-color: navy;
+            color: white;
+            margin-top: -22px;
+            
+        }
+        
+/* Additional CSS for Footer */
+footer{
+    background-color: navy;
+    border-top-left-radius:92px ;
+}
+
+.footer-section {
+    flex: 1;
+    margin-bottom: 30px;
+}
+
+.footer-section h2 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer-section p {
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    padding: 0;
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+    margin-left: -25px;
+
+}
+
+.footer-section ul li a:hover {
+    color: #fff;
+}
+
+.contact-input,
+.btn-primary {
+    width: 20%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.contact-input {
+    margin-bottom: 15px;
+    background-color: #eee;
+}
+
+.btn-primary {
+    background-color: #ff6600;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.social-links {
+    display: flex;
+    justify-content: center;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 30px;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #ff6600;
+    
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 15px 0;
+    background-color:rgb(251, 231, 5);
+    color: #000000;
+    font-size: 16px;
+   
+}
+
+        .Signup{
+            border: 1.4px solid yellow;
+            padding: 9px 18px; 
+            cursor: pointer;
+            margin-bottom: -6px;
+            border-radius: 22px;
+            margin-left: 14px;
+            
+
+        }
+        .Signup:hover{
+            background-color: yellow;
+            color: black;
+        }
+        .side{
+            height: 84vh;
+            width: 85vh;
+            float: right;
+            margin-right: 65px;
+        }
+        .hero{
+            font-size: 67px;
+            font-weight: bold;
+            color: navy;
+            margin-top: 142px;
+            margin-left: 30px;
+        }
+        .catbut{
+            background-color: orange;
+            padding: 15px 29px;
+            border-radius: 24px;
+            margin-left: 89px;
+            border: none;
+            cursor: pointer;
+            margin-top: -19px;
+           
+        }
+
+        .fSearch{
+            background-color: rgb(229, 229, 229);
+            height: 15vh;
+            width: 539px;
+            margin-left: 30px;
+            border-radius: 22px;
+        }
+        .sBut:hover{
+           background-color: rgb(5, 5, 182);
+          color: aliceblue;
+        }
+        .container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        margin-left: 12px;
+        margin-top: -518px;
+        font-size: 18px;
+    }
+    h1, h2 {
+        color: #333;
+    }
+    p {
+        color: #666;
+        line-height: 1.6;
+    }
+
+    h1, h2 {
+        color: #333;
+    }
+    p {
+        color: #666;
+        line-height: 1.6;
+    }
+    .contact-form {
+        margin-top: 20px;
+        margin-left: 22px;
+    }
+    .contact-form label {
+        display: block;
+        margin-bottom: 5px;
+        color: #333;
+    }
+    @media (max-width: 768px) {
+            ul {
+                display: flex;
+                flex-direction: column; /* Change direction to column for smaller screens */
+                align-items: center; /* Center items horizontally */
+                gap: 10px;
+                margin-left: 0; /* Remove left margin */
+                padding: 0; /* Remove padding */
+            }
+        }
+            nav {
+                margin-top: 0; /* Remove top margin */
+            }
+    .cat p{
+        color: #000000;
+    }
+    .contact-form input[type="text"],
+    
+    .contact-form textarea {
+        width: 40%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    li{
+        cursor: pointer;
+    }
+    .contact-form input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .contact-form input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+     html{
+        scroll-behavior: smooth;
+        content-visibility: smooth;
+     }
+        a{
+            text-decoration: none;
+            color: white;
+            font-size: 17px
+        }
+     
+      
+    </style>
+</head>
+<body>
+   
+    <nav>
+    <ul> 
+        <li style="margin-left: -322px; cursor: pointer;font-size: 28px; font-weight: bold;   margin-bottom: -3px;">Jobs Hunter</li>
+        <a href="./index.html"><li style="margin-left: 121px; ">Home</li></a>
+        <a href="#About"><li>About</li></a>
+        <a href="#Cimg"> <li>Contact us</li></a>
+        <a href="./JobsShow.html"><li>Latest Jobs</li></a>
+      <a href="./PostJob.html"><li>Post a Job</li></a>
+      <a href="./Apply.html"><li>Apply</li></a>
+      <a href="./index.html"><li>Catagories</li></a>
+        <a href="./Signup.html">  <li style="margin-left: 65px; margin-right: -63px; font-weight: bold;  background-color: yellow; border-radius: 19px; padding: 10px 23px; color: black; cursor: pointer; margin-bottom: -6px;">Login</li><a/>
+       <a  href="./Signup.html"> <li style="margin-right: 13px;" class="Signup">Signup</li></a>
+    </ul>
+</nav>
+
+<img class="side" src="./job.jpg" alt="">
+<p class="hero">Find Your Perfect <br> Job Match</p>
+<div class="fSearch">
+    <i style="margin-left: 22px; margin-top: 33px; font-size: 22px;" class="fas fa-search"></i>&nbsp;&nbsp;&nbsp;Job Tittle or Keyword&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 29px; font-weight: bold;">|</span>
+    <i style="margin-left: 20px; margin-top: 32px; font-size: 22px;" class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;Jobs Locations
+    <button class="sBut" style="padding: 14px 26px; margin-top: -5px; border: 2px solid rgb(13, 13, 187); margin-left: 26px;  border-radius: 17px;">Search</button>
+</div>
+<br>
+<br>
+
+<div class="cat">
+<div style=" background-color: #f4f4f4;">
+    <br>
+<p id="catagories" style="font-size: 40px; font-weight: bold; margin-left: 479px;">Top Catagories</p>
+<br>
+<br>
+<div style="background-color:#ffffff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); display: inline-block; height: 54vh; width: 53vh; border-radius: 28px; margin-left: 66px;">
+<p style="margin-left: 82px; font-size: 29px; font-weight: bold; padding-top: -6px; color: black;">Web Design</p>
+<i style="padding: 10px 125px; font-size: 52px; gap: 5px; color: navy;" class="fas fa-desktop"></i><p style="font-size: 25px; margin-left: 79px;">Total 148 jobs </p>
+<button class="catbut">Apply Now</button>
+
+</div>
+<div style="background-color:#fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); display: inline-block; height: 54vh; width: 53vh; border-radius: 28px; margin-left: 66px;">
+<p style="margin-left: 22px; font-size: 29px; font-weight: bold; padding-top: -6px;">Website Developmnet</p>
+<i style="padding: 10px 125px; font-size: 52px; gap: 5px; color: navy;" class="fas fa-code"></i><p style="font-size: 25px; margin-left: 79px;">Total 148 jobs </p>
+<button class="catbut">Apply Now</button>
+</div>
+<div style="background-color:#fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); display: inline-block; height: 54vh; width: 53vh; border-radius: 28px; margin-left: 66px;">
+<p style="margin-left: 44px; font-size: 29px; font-weight: bold;padding-top: -6px;">Digital Marketing</p>
+<i style="padding: 10px 125px; font-size: 52px; gap: 5px; color: navy;" class="fas fa-chart-line"></i><p style="font-size: 25px; margin-left: 79px;">Total 148 jobs </p>
+<button class="catbut">Apply Now</button>
+</div>
+<div style="background-color:#fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); display: inline-block; margin-top: 33px;height: 54vh; width: 53vh; border-radius: 28px; margin-left: 66px;">
+
+<p style="margin-left: 53px; font-size: 29px; font-weight: bold; padding-top: -6px; ">Virtual Assitent</p>
+<i style="padding: 10px 125px; font-size: 52px; gap: 5px; color: navy;" class="fas fa-user-tie"></i><p style="font-size: 25px; margin-left: 79px;">Total 148 jobs </p>
+<button class="catbut">Apply Now</button>
+</div>
+<div style="background-color:#fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); display: inline-block; height: 54vh; width: 53vh; border-radius: 28px; margin-left: 66px;">
+
+<p style="margin-left: 39px; font-size: 29px; font-weight: bold; padding-top: -6px;">Graphic Designing</p>
+<i style="padding: 10px 125px; font-size: 52px; gap: 5px; color: navy;" class="fas fa-paint-brush"></i><p style="font-size: 25px; margin-left: 79px;">Total 148 jobs </p>
+<button class="catbut">Apply Now</button>
+</div>
+<div style="background-color:#fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); display: inline-block; height: 54vh; width: 53vh; border-radius: 28px; margin-left: 66px;">
+
+<p style="margin-left: 82px; font-size: 29px; font-weight: bold; padding-top: -6px;">Eccomerce</p>
+<i style="padding: 10px 125px; font-size: 52px; gap: 5px; color: navy;" class="fas fa-shopping-cart"></i><p style="font-size: 25px; margin-left: 79px;">Total 148 jobs </p>
+<button class="catbut">Apply Now</button>
+</div>
+<div style="background-color:#fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); display: inline-block; margin-top: 33px;height: 54vh; width: 53vh; border-radius: 28px; margin-left: 66px;">
+
+<p style="margin-left: 63px; font-size: 29px; font-weight: bold; padding-top: -6px;">Ads Marketing</p>
+<i style="padding: 10px 125px; font-size: 52px; gap: 5px; color: navy;" class="fas fa-bullhorn"></i><p style="font-size: 25px; margin-left: 79px;">Total 148 jobs </p>
+<button class="catbut">Apply Now</button>
+</div>
+<div style="background-color:#fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); display: inline-block;height: 54vh; width: 53vh; border-radius: 28px; margin-left: 66px;">
+
+<p style="margin-left: 47px; font-size: 29px; font-weight: bold; padding-top: -6px;">Adobe Photoshop</p>
+<i style="padding: 10px 125px; font-size: 52px; gap: 5px; color: navy;" class="fas fa-edit"></i><p style="font-size: 25px; margin-left: 79px;">Total 148 jobs </p>
+<button class="catbut">Apply Now</button>
+</div>
+<div style="background-color:#fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); display: inline-block; height: 54vh;width: 53vh; border-radius: 28px; margin-left: 66px;">
+
+<p style="margin-left: 85px; font-size: 29px; font-weight: bold; padding-top: -6px;">Google Ads</p>
+<i style="padding: 10px 125px; font-size: 52px; gap: 5px; color: navy;" class="fab fa-google"></i><p style="font-size: 25px; margin-left: 79px;">Total 148 jobs </p>
+<button class="catbut">Apply Now</button>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</div>
+<br><br><br><br><br>
+<img id="About" style="height: 112vh; width: 211vh; " src="./Untitled design (30).png" alt="">
+<div >
+
+<img class="abt" style="height: 80vh; width: 88vh; margin-left: 677px; border-radius: 59px; margin-top: -585px; display: block;" src="./aboutimg.jpg" alt="">
+<div class="container">
+    <h1 style="margin-top: 22px;">About Us</h1>
+    <p>Welcome to Job Seeker, your one-stop destination for finding the perfect job opportunities tailored to your skills and preferences.</p>
+    <h2>Our Mission</h2>
+    <p>At Job Seeker, we are dedicated to connecting job seekers with the right employment opportunities by providing a user-friendly platform that streamlines the job search process.</p>
+    
+    <h2>Our Team</h2>
+    <p>Behind Job Seeke r is a dedicated team of professionals committed to helping you achieve your career goals. From software developers to customer support specialists, our team works tirelessly to ensure that your job search experience is seamless and efficient.</p>
+  
+</div>
+</div>
+<br>
+<br>
+<br><br>
+<br><br>
+<hr>
+<br><br>
+<br><br>
+<img  style="height: 94vh; width: 211vh;" src="./BG.png" alt="">
+<h1 id="Cimg" style=" margin-left: 22px; margin-top: -479px;">Contact Us</h1>
+<p style="font-size: 17px;  margin-left: 22px;">Have questions, feedback, or suggestions? Feel free to reach out to us using the contact form below.</p>
+<div class="contact-form">
+    <form action="#" method="post">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Your Email:</label>
+        <input style="width: 477px; border: 1px solid rgb(192, 191, 191); padding: 9px;" type="email" id="email" name="email" required>
+        
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        <br>
+        <input style="margin-left: -2px;" type="submit" value="Send Message">
+    </form>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer>
+    <div class="footer-content">
+        <br><br>
+        <div style="margin-left: 55px;" class="footer-section newsletter">
+            <h1 style="color: white;">Subscribe to Newsletter</h1>
+            <p>Subscribe to our newsletter to receive updates on new job listings, industry trends, and more.</p>
+            <form action="#">
+                <input type="email" name="email" class="text-input contact-input" placeholder="Your email address">
+                <button style="width: 82px;" type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </div>
+        <div class="footer-section socials">
+            <h1 style="margin-left: 558px; color: white;">Follow Us</h1>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/muhammad-zawwar-akram-572b36266/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a> <!-- GitHub Icon -->
+                <a href="https://www.freelancer.com/u/zain556" target="_blank"><i class="fas fa-user-circle" title="Freelacer.com"></i></a>
+            </div>
+        </div>
+        <br>
+        <div class="footer-section additional-services">
+            <h1  style="margin-left: 42px; color: white;">Additional Services</h1>
+           
+            <ul>
+                <div style="margin-left: -242px;">
+                <li><a href="#">Resume Writing</a></li>
+                <li><a href="#">Career Counseling</a></li>
+                <li><a href="#">Interview Preparation</a></li>
+                <li><a href="#">Skill Development Courses</a></li>
+            </div>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-section links">
+        <h1 style="margin-left: 768px; margin-top: -217px; color: white;">Quick Links</h1>
+        <ul >
+            <div style="margin-left: 273px;">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Jobs</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </div>
+        <div  style="margin-left: 143px;">
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+  
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Blog</a></li>
+        </div>
+        <div style="margin-left: 83px;">
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">Find Jobs</a></li>
+            <li><a href="#">Post Jobs</a></li>
+        </div>
+        </ul>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2024 JobSeeker | Designed by Muhammad Zawwar Akram
+    </div>
+</footer>
+
+<script></script>
+</body>
+</html>

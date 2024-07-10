@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toggle Navbar</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background-color: #333;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; /* Center items vertically */
+      padding: 23px 29px;
+    }
+
+    .navbar-toggle {
+      cursor: pointer;
+      display: none;
+    }
+
+    .navbar-menu {
+      list-style-type: none;
+      display: flex;
+      margin: 0; /* Remove default margin */
+      padding: 0; /* Remove default padding */
+    }
+
+    .navbar-menu li {
+      margin-right: 20px;
+    }
+
+    .navbar-menu li a {
+      color: #fff;
+      text-decoration: none;
+    
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column; /* Change flex direction to column for smaller screens */
+        align-items: flex-start; /* Align items to the start (left) */
+        padding: 20px; /* Increase padding for better spacing */
+    
+      }
+
+      .navbar-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .navbar-menu li {
+        margin: 10px 0;
+      }
+
+      .navbar-toggle {
+        display: block;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome CSS -->
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-toggle" id="navbarToggle">
+    <i class="fas fa-bars toggle-icon"></i> <!-- Font Awesome icon for toggle -->
+  </div>
+  <ul class="navbar-menu" id="navbarMenu">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+<script>
+  document.getElementById('navbarToggle').addEventListener('click', function() {
+    var navbarMenu = document.getElementById('navbarMenu');
+    if (navbarMenu.style.display === 'flex') {
+      navbarMenu.style.display = 'none';
+    } else {
+      navbarMenu.style.display = 'flex';
+    }
+  });
+</script>
+</body>
+</html>

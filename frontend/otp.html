@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 13px;
+            box-shadow: 0 0 19px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .otp-input {
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            text-align: center;
+            margin: 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        #sendotpbtn {
+            width: 402px;
+            padding: 11px;
+            background-color: rgb(0, 195, 0);
+            border: none;
+            border-radius: 5px;
+            margin: 20px -11px;
+        }
+
+        .otp-input:focus {
+            border-color: #007bff;
+        }
+
+        .otp-input:last-child {
+            margin-right: 0;
+        }
+
+        .otp-description {
+            margin-top: 20px;
+            color: #666;
+        }
+
+        .otp-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 1px;
+            transition: background-color 0.3s;
+        }
+
+        .otp-button:hover {
+            background-color: #0056b3;
+        }
+
+        #otpSection {
+            display: none;
+        }
+
+        .resend-link {
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        #email {
+            height: 27px;
+            width: 395px;
+            margin-left: -2px;
+        }
+    </style>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Email OTP Verification</h1>
+        <div>
+            <div class="emailSection">
+                <input type="email" id="email" placeholder="Enter Your Email Address" autocomplete="off"><br>
+                <button id="sendotpbtn" onclick="SendOTP()">Send OTP</button>
+            </div>
+            <div id="otpSection">
+                <input type="text" class="otp-input" maxlength="1" />
+                <input type="text" class="otp-input" maxlength="1" />
+                <input type="text" class="otp-input" maxlength="1" />
+                <input type="text" class="otp-input" maxlength="1" />
+                <div class="otp-description">Please enter the OTP sent to your email.</div>
+                <button class="otp-button" onclick="VerifyOTP()">Verify OTP</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        async function SendOTP() {
+            const otpSection = document.getElementById('otpSection');
+            const email = document.getElementById('email').value;
+            const OTpCode = Math.floor(Math.random() * 10000);
+            Email.send({
+                SecureToken: "bff60c43-476b-492d-acf4-eac6a204bcc2",
+                To: email,
+                From: "khursheedshah775@gmail.com",
+                Subject: "Your Verification OTP",
+                Body: `<h1>Your Verification OTP is: ${OTpCode}</h1>`
+            }).then(function (message) {
+                if (message == "OK") {
+                    alert(`Successfully OTP Verification Code Sent on: ${email}`);
+                    document.getElementById('email').setAttribute('ottpCode', OTpCode);
+                    otpSection.style.display = "block"
+                } else {
+                    alert("OTP Verification Code Not Sent: Try Again!");
+                }
+            });
+        }
+        async function VerifyOTP() {
+            let entercode = '';
+            document.querySelectorAll('.otp-input').forEach(input => {
+                entercode += input.value.trim();
+            });
+            let sendOTPCode = document.getElementById('email').getAttribute('ottpCode');
+            if (entercode === sendOTPCode) {
+
+                alert("Successfully Verified Email!");
+                otpSection.style.display = "none";
+                window.location.href = 'index.html';
+            } else {
+                alert("Invalid OTP Code: Try Again!");
+
+            }
+
+        }
+    </script>
+</body>
+
+</html>
+
+
+</script>
+</body>
+
+</html>
